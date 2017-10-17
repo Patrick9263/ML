@@ -1,5 +1,5 @@
 (*
-cd C:\Users\Patrick\MLProjects
+cd C:\Users\Patrick\SMLProjects
 sml
 use "zeller.sml";
 *)
