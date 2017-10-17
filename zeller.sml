@@ -2,6 +2,9 @@
 cd C:\Users\Patrick\SMLProjects
 sml
 use "zeller.sml";
+
+CTRL + Z
+carrige return = exitgit
 *)
 
 local
