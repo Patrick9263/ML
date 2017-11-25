@@ -23,6 +23,6 @@ val append = fn (value, list) => value @ stack;
 *)
 val stack1 = append([20],stack);
 val stack2 = append([30],stack1);
-stack2
+stack2;
 
 val exit = fn () => "^Z"
