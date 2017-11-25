@@ -14,8 +14,8 @@ else append(tl(values), list)
 *)
 
 fun helper (input,acc) =
-if null(input) then acc
-else helper(tl(input),acc+1)
+  if null(input) then acc
+  else helper(tl(input),acc+1)
 
 fun length(list) = helper(list,0)
 
@@ -24,8 +24,8 @@ fun pop (stack) = (hd(stack),tl(stack))
 fun peek (stack) = hd(stack)
 
 fun isEmpty (stack) =
-if null(stack) then true
-else false
+  if null(stack) then true
+  else false
 
 val stack = [];
 val stack1 = push([2],stack);
