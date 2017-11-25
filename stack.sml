@@ -7,22 +7,32 @@ CTRL + Z
 carrige return = exitgit
 *)
 
-print "Hello World\n";
-
 (*
-val test = 2;
-val test2 = 3;
-val result = test + test2;
-result;
+fun append (values, list) =
+if null(values) then list
+else append(tl(values), list)
 *)
+
+fun helper (input,acc) =
+if null(input) then acc
+else helper(tl(input),acc+1)
+
+fun length(list) = helper(list,0)
+
+fun push (values, stack) = values @ stack
+fun pop (stack) = (hd(stack),tl(stack))
+fun peek (stack) = hd(stack)
+
+fun isEmpty (stack) =
+if null(stack) then true
+else false
+
 val stack = [];
-stack;
-val append = fn (value, list) => value @ stack;
-(*
-| (h::t) @ value = h :: t @ value;
-*)
-val stack1 = append([20],stack);
-val stack2 = append([30],stack1);
-stack2;
+val stack1 = push([2],stack);
+val stack2 = push([3],stack1);
 
-val exit = fn () => "^Z"
+val stack3 = push([4],stack2);
+val stack4 = push([5],stack3);
+val stack5 = #2(pop(stack4));
+isEmpty stack5;
+isEmpty stack;
