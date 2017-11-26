@@ -22,10 +22,7 @@ fun length(list) = helper(list,0)
 fun push (values, stack) = values @ stack
 fun pop (stack) = (hd(stack),tl(stack))
 fun peek (stack) = hd(stack)
-
-fun isEmpty (stack) =
-  if null(stack) then true
-  else false
+fun isEmpty (stack) = null(stack)
 
 val stack = [];
 val stack1 = push([2],stack);
