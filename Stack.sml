@@ -33,3 +33,7 @@ val stack4 = push([5],stack3);
 val stack5 = #2(pop(stack4));
 isEmpty stack5;
 isEmpty stack;
+
+(*
+make pop return the value, and modify the stack using ref
+*)
