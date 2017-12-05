@@ -1,25 +1,48 @@
 (*
 cd C:\Users\Patrick\SMLProjects
 sml
-use "queue.sml";
+use "Queue.sml";
 *)
 
-fun helper (queue, acc) =
-  if null(queue) then acc
-  else helper(tl(queue), acc+1)
+val length: int ref = ref 0;
 
-fun length (queue) = helper (queue, 0)
+val head: int list ref = ref [];
+val tail: int list ref = ref [];
+val queue: (int list ref * int list ref) ref = ref (head, tail);
 
-fun enqueue (value, queue) = queue @ value
-fun dequeue (queue) = tl(queue)
-fun isEmpty (queue) = null(queue)
 
-val q = [];
-val q2 = enqueue([1], q);
-val q3 = enqueue([2], q2);
-val q4 = enqueue([3], q3);
+fun enqueue (value) =
+let
+  val add =  ref [value];
+in
+  if null(!head) then (
+    head := add;
+    tail := add;
+    queue := (head, tail);
+    length := 1 + (!length)
+    ) else (
+      newTail
+      tail := (!tail);
+      queue := (head, tail);
+      length := 1 + (!length)
+    )
+end;
 
-val q5 = dequeue(q4);
-val q6 = dequeue(q5);
-isEmpty(q);
-isEmpty(q5);
+(*
+fun dequeue () =
+let
+  val _ = [];
+in
+  length := (!length) - 1;
+  queue := tl(!queue)
+end;
+
+fun isEmpty () = null(!queue)
+*)
+
+(*
+recursive datatypes in ML
+
+(int, ref(in ref))
+best guess
+*)

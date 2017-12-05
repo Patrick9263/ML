@@ -69,3 +69,6 @@ val stack5 = #2(pop(stack4));
 isEmpty stack5;
 isEmpty stack;
 *)
+
+
+(*Record datatype* is like a dictionary)
